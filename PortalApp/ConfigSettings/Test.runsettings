@@ -20,7 +20,7 @@
 		<!-- Provide path from project's root directory -->
 		<Parameter name="ExecutionReportsFolderPath" value="Artifacts\TestExecutionReports" />
 		<Parameter name="ScreenshotsFolderPath" value="Artifacts\Screenshots" />
-		<!-- Use recording wisely. Provide path from project's root directory keep it empty if recording not needed -->
+		<!--Provide path from project's root directory keep it empty if recording not needed -->
 		<Parameter name="RecordingVideosDir" value="RecordingLogs" />
 		<Parameter name="EnableTestMode" value="true" />
 	</TestRunParameters>

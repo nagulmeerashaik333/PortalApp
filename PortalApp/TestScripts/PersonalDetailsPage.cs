@@ -23,13 +23,9 @@ namespace AutomationPortal.Tests
         {
             try
             {
-                ReportUtil.CreateTest("Onboarding_Page_Details");
-                ReportUtil.AssignCategory("Smoke");
                 var dataRead = TestDataManager.GetTestData<TestDataManager.Data>("TestData/TestData.json");
                 var portalApp = new PortalApp(page);
                 await portalApp.LoginPage.Login(username, password);
-
-
             }
             catch (PlaywrightException ex)
             {

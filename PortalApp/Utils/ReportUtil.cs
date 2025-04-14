@@ -17,7 +17,7 @@ namespace AutomationPortal.Utils
             {
                 _sparkReport = InitExtentSparkReport(reportPath);
                 SetReportTitle("Automation Test Report");
-                SetReportName("Execution Results");
+                SetReportName("Sample Execution Results");
 
                 _extentReports = InitExtentReport();
                 AttachReport();
@@ -103,6 +103,7 @@ namespace AutomationPortal.Utils
         {
             return _extentTest.AssignDevice(device);
         }
+
         public static ExtentTest CreateNode(string name)
         {
             return _extentTest.CreateNode(name);

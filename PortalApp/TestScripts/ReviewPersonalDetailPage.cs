@@ -12,7 +12,7 @@ namespace UIAutomationPortal.TestScripts
         public async Task FillingPersonalDetailsWithDefaultLanguage()
         {
             PortalApplication portalApplication = new PortalApplication(page);
-            await portalApplication.TC02_ValidatingAddressInformationPage(Language.Default);
+            await portalApplication.TC01_ValidatingAddressInformationPage(Language.Default);
         }
 
         //[Test]

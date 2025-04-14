@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <RunSettings>
 	<TestRunParameters>
-		<Parameter name="Email" value="braucaunupeussu-7222@yopmail.com" />
-		<Parameter name="Password" value="Unhcr@123" />
-		<Parameter name="Url" value="https://myservices-template-int.powerappsportals.com/en-US/" />
+		<Parameter name="Email" value="" />
+		<Parameter name="Password" value="" />
+		<Parameter name="Url" value="" />
 		<!-- chrome,msedge,firefox -->
 		<Parameter name="BrowserType" value="chrome" />
 		<Parameter name="MfaSecretKey" value=""/>

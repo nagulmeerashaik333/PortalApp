@@ -1,4 +1,4 @@
-﻿using AutomationPortal.Constants;
+﻿using AutomationPortal.GlobalConstants;
 using NUnit.Framework;
 using System.Reflection;
 

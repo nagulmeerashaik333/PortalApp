@@ -1,5 +1,5 @@
 ﻿
-namespace AutomationPortal.Constants
+namespace AutomationPortal.GlobalConstants
 {
     public class Property
     {

@@ -5,7 +5,7 @@
 		<Parameter name="Password" value="Unhcr@123" />
 		<Parameter name="Url" value="https://myservices-template-int.powerappsportals.com/en-US/" />
 		<!-- chrome,msedge,firefox -->
-		<Parameter name="BrowserType" value="msedge" />
+		<Parameter name="BrowserType" value="chrome" />
 		<Parameter name="MfaSecretKey" value=""/>
 		<Parameter name="AzureKey" value="" />
 		<Parameter name="SessionId" value="" />
@@ -18,10 +18,10 @@
 		<Parameter name="ScreenshotsForFailedTests" value="true" />
 		<Parameter name="ScreenshotsForPassedTests" value="true" />
 		<!-- Provide path from project's root directory -->
-		<Parameter name="ExecutionReportsFolderPath" value="Artifacts\TestExecutionReports" />
-		<Parameter name="ScreenshotsFolderPath" value="Artifacts\Screenshots" />
-		<!-- Use recording wisely. Provide path from project's root directory keep it empty if recording not needed -->
-		<Parameter name="RecordingVideosDir" value="RecordingLogs" />
+		<Parameter name="ExecutionReportsFolderPath" value="C:\Users\v-shaiknag\source\repos\PortalApp\Output\TestExecutionReports" />
+		<Parameter name="ScreenshotsFolderPath" value="C:\Users\v-shaiknag\source\repos\PortalApp\Output\Screenshots" />
+		<!-- Provide path from project's root directory keep it empty if recording not needed -->
+		<Parameter name="RecordingVideosDir" value="" />
 		<Parameter name="EnableTestMode" value="true" />
 	</TestRunParameters>
 </RunSettings>

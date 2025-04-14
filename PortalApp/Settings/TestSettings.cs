@@ -1,4 +1,4 @@
-﻿using AutomationPortal.Constants;
+﻿using AutomationPortal.GlobalConstants;
 using AutomationPortal.Utils;
 using Microsoft.Playwright;
 

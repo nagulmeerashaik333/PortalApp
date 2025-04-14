@@ -1,4 +1,4 @@
-﻿using AutomationPortal.Constants;
+﻿using AutomationPortal.GlobalConstants;
 using AutomationPortal.Settings;
 using AutomationPortal.Utils;
 using AventStack.ExtentReports;

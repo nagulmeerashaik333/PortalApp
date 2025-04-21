@@ -5,9 +5,9 @@ namespace AutomationPortal.PageObjects
     {
         public static class LoginPageLocators //Loginpage Elements
         {
-            public static string Username = "//input[@id=\'signInName\']";
-            public static string Password = "//input[@id=\'password\']";
-            public static string SignInButton = "//button[@id=\'next\']";
+            public static string Username = "//input[@aria-label=\"Username\"]";
+            public static string Password = "//input[@aria-label=\"Password\"]";
+            public static string SignInButton = "//button[text()='Sign In']";
         }
     }
 }

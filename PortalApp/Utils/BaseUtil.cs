@@ -1000,7 +1000,7 @@ namespace AutomationPortal.Utils
 
 
 
-        protected async Task WaitUntilAppReadyStateIsComplete()
+        protected async Task WaitUntilPageReadyStateIsComplete()
         {
             string readyState = await _page.EvaluateAsync<string>("document.readyState");
             try
@@ -1013,7 +1013,7 @@ namespace AutomationPortal.Utils
                     return;
                 }
                 await Task.Delay(500);
-                await WaitUntilAppReadyStateIsComplete();
+                await WaitUntilPageReadyStateIsComplete();
             }
             catch (Exception e)
             {

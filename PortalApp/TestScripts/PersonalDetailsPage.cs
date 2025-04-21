@@ -1,6 +1,5 @@
 ﻿using AutomationPortal.GlobalConstants;
 using AutomationPortal.TestData;
-using AutomationPortal.Utils;
 using NUnit.Framework;
 using Microsoft.Playwright;
 using UIAutomationPortal.LangaugeEnum;
@@ -18,8 +17,11 @@ namespace AutomationPortal.Tests
         string? username = TestContext.Parameters[Property.Username];
         string? password = TestContext.Parameters[Property.Password];
 
+        /*----------------------------------------------------------
+                            LoginTest
+        -----------------------------------------------------------*/
         [Test]
-        public async Task LoginTest()
+        public async Task ValidateIfValidUserIsAbleToLogin()
         {
             try
             {
@@ -34,11 +36,8 @@ namespace AutomationPortal.Tests
 
         }
 
-        [TestCase(Language.Default)]
-        [TestCase(Language.Arabic)]
-        [TestCase(Language.Spanish)]
         [Test]
-        public async Task TC01_ValidatingAddressInformationPage(Language language)
+        public async Task TC01_ValidateAddressInformationPage(Language language)
         {
             try
             {
@@ -71,6 +70,7 @@ namespace AutomationPortal.Tests
                 await portalApp.AddressInformationPage.SelectGender("");
                 await portalApp.AddressInformationPage.SelectNationality("");
                 await portalApp.AddressInformationPage.SelectRelegion("");
+                
             }
             catch (PlaywrightException ex)
             {

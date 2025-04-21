@@ -47,7 +47,7 @@ namespace AutomationPortal.DriverFactory
             string? url = TestContext.Parameters[Property.Url];
             await page.GotoAsync(url);
         }
-
+      
         [TearDown]
         public async Task CloseBrowserInstance()
         {
@@ -61,7 +61,7 @@ namespace AutomationPortal.DriverFactory
         {
             ReportUtil.SetTheme(AventStack.ExtentReports.Reporter.Config.Theme.Dark);
             //ReportUtil.AssignDevice(Environment.OSVersion.ToString());
-            //ReportUtil.AssignAuthor(Environment.UserName);
+            ReportUtil.AssignAuthor(Environment.UserName);
             string projectRoot = TestContextUtil.GetProjectRootDir();
             string screenshotsFolderPath = Path.Combine(projectRoot, TestContext.Parameters[Property.ScreenshotsFolderPath]);
             string testCaseName = TestContext.CurrentContext.Test.Name;

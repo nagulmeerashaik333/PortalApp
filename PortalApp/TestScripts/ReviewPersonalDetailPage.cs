@@ -12,17 +12,19 @@ namespace UIAutomationPortal.TestScripts
         [Test]
         public async Task FillingPersonalDetailsWithDefaultLanguage()
         {
-            ReportUtil.CreateTest("Onboarding_Page_Details");
+            ReportUtil.CreateTest("Filling personal details with Default language");
             ReportUtil.AssignCategory("Smoke");
             PortalApplication portalApplication = new PortalApplication(page);
-            await portalApplication.TC01_ValidatingAddressInformationPage(Language.Default);
+            await portalApplication.TC01_ValidateAddressInformationPage(Language.Default);
         }
 
-        //[Test]
-        //public async Task FillingPersonalDetailsWithArabicLanguage()
-        //{
-        //    PortalApplication portalApplication = new PortalApplication(page);
-        //    await portalApplication.TC02_ValidatingAddressInformationPage(Language.Arabic);
-        //}
+        [Test]
+        public async Task FillingPersonalDetailsWithArabictLanguage()
+        {
+            ReportUtil.CreateTest("Filling personal details with Arabic language");
+            ReportUtil.AssignCategory("Smoke");
+            PortalApplication portalApplication = new PortalApplication(page);
+            await portalApplication.TC01_ValidateAddressInformationPage(Language.Arabic);
+        }
     }
 }

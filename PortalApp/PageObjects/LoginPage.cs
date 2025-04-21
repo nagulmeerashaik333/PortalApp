@@ -1,6 +1,9 @@
-﻿using AutomationPortal.Utils;
+﻿using AutomationPortal.DriverFactory;
+using AutomationPortal.GlobalConstants;
+using AutomationPortal.Utils;
 using Microsoft.CodeAnalysis;
 using Microsoft.Playwright;
+using NUnit.Framework;
 using static AutomationPortal.PageObjects.ObjectRepository;
 
 namespace AutomationPortal.PageObjects
@@ -20,7 +23,7 @@ namespace AutomationPortal.PageObjects
                 throw new ArgumentException("Email cannot be null or empty", nameof(email));
             }
             var usernameElement = Locator(LoginPageLocators.Username);
-            await HightlightElementAsync(usernameElement);
+            //await HightlightElementAsync(usernameElement);
             await FillAsync(usernameElement, email);
         }
         public async Task EnterPassword(string password)
@@ -30,13 +33,13 @@ namespace AutomationPortal.PageObjects
                 throw new ArgumentException("Password cannot be null or empty", nameof(password));
             }
             var passwordElement = Locator(LoginPageLocators.Password);
-            await HightlightElementAsync(passwordElement);
+            //await HightlightElementAsync(passwordElement);
             await FillAsync(passwordElement, password);
         }
         public async Task ClickSignIn()
         {
             var clickSigninButton = Locator(LoginPageLocators.SignInButton);
-            await HightlightElementAsync(clickSigninButton);
+            //await HightlightElementAsync(clickSigninButton);
             await ClickAsync(clickSigninButton);
             
         }
@@ -52,7 +55,11 @@ namespace AutomationPortal.PageObjects
         //    await EnterEmail(username);
         //    await EnterPassword(password);
         //    await ClickSignIn();
-            
         //}
+        private async Task PassThroughLogin()
+        {
+            BaseTest baseTest = new BaseTest();
+            await baseTest.GoToUrl();
+        }
     }
 }

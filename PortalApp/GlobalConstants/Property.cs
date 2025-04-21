@@ -14,5 +14,6 @@ namespace AutomationPortal.GlobalConstants
         public static readonly string ScreenshotsFolderPath = "ScreenshotsFolderPath";
         public static readonly string RecordingVideosDir = "RecordingVideosDir";
         public static readonly string HeadlessMode = "HeadlessMode";
+        public static readonly string Environment = "Environment";
     }
 }

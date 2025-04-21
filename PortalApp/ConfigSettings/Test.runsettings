@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <RunSettings>
 	<TestRunParameters>
-		<Parameter name="Email" value="braucaunupeussu-7222@yopmail.com" />
+		<Parameter name="Email" value="nshaik@medline.com" />
 		<Parameter name="Password" value="Unhcr@123" />
-		<Parameter name="Url" value="https://myservices-template-int.powerappsportals.com/en-US/" />
+		<Parameter name="Url" value="https://wd5.myworkday.com/wday/authgwy/medline/login.htmld?redirect=n" />
 		<!-- chrome,msedge,firefox -->
 		<Parameter name="BrowserType" value="chrome" />
 		<Parameter name="MfaSecretKey" value=""/>
@@ -18,10 +18,10 @@
 		<Parameter name="ScreenshotsForFailedTests" value="true" />
 		<Parameter name="ScreenshotsForPassedTests" value="true" />
 		<!-- Provide path from project's root directory -->
-		<Parameter name="ExecutionReportsFolderPath" value="C:\Users\v-shaiknag\source\repos\PortalApp\Output\TestExecutionReports" />
-		<Parameter name="ScreenshotsFolderPath" value="C:\Users\v-shaiknag\source\repos\PortalApp\Output\Screenshots" />
+		<Parameter name="ExecutionReportsFolderPath" value="C:\Users\v-shaiknag\source\repos\PortalApp\Artifacts\TestExecutionReports" />
+		<Parameter name="ScreenshotsFolderPath" value="C:\Users\v-shaiknag\source\repos\PortalApp\Artifacts\Screenshots" />
 		<!-- Provide path from project's root directory keep it empty if recording not needed -->
-		<Parameter name="RecordingVideosDir" value="C:\Users\v-shaiknag\source\repos\PortalApp\Output\TestRunVideo" />
+		<Parameter name="RecordingVideosDir" value="C:\Users\v-shaiknag\source\repos\PortalApp\Artifacts\TestRunVideo" />
 		<Parameter name="EnableTestMode" value="true" />
 	</TestRunParameters>
 </RunSettings>

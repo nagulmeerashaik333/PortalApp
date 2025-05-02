@@ -1,9 +1,6 @@
-﻿using AutomationPortal.DriverFactory;
-using AutomationPortal.GlobalConstants;
-using AutomationPortal.Utils;
-using Microsoft.CodeAnalysis;
+﻿using AutomationPortal.Utils;
 using Microsoft.Playwright;
-using NUnit.Framework;
+using UIAutomationPortal.LoginResultEnum;
 using static AutomationPortal.PageObjects.ObjectRepository;
 
 namespace AutomationPortal.PageObjects
@@ -16,50 +13,35 @@ namespace AutomationPortal.PageObjects
             this._page = page;
         }
 
-        public async Task EnterEmail(string email)
+        public async Task EnterEmailAsync(string email)
         {
             if (string.IsNullOrEmpty(email))
-            {
                 throw new ArgumentException("Email cannot be null or empty", nameof(email));
-            }
             var usernameElement = Locator(LoginPageLocators.Username);
-            //await HightlightElementAsync(usernameElement);
+            await HightlightElementAsync(usernameElement);
             await FillAsync(usernameElement, email);
         }
-        public async Task EnterPassword(string password)
+        public async Task EnterPasswordAsync(string password)
         {
             if (string.IsNullOrEmpty(password))
-            {
                 throw new ArgumentException("Password cannot be null or empty", nameof(password));
-            }
             var passwordElement = Locator(LoginPageLocators.Password);
-            //await HightlightElementAsync(passwordElement);
+            await HightlightElementAsync(passwordElement);
             await FillAsync(passwordElement, password);
         }
-        public async Task ClickSignIn()
+        public async Task ClickSignInAsync()
         {
             var clickSigninButton = Locator(LoginPageLocators.SignInButton);
-            //await HightlightElementAsync(clickSigninButton);
+            await HightlightElementAsync(clickSigninButton);
             await ClickAsync(clickSigninButton);
-            
+
         }
-        public async Task Login(string? email, string? password)
+        public async Task<LoginResult> LoginAsync(string? email, string? password)
         {
-            await EnterEmail(email);
-            await EnterPassword(password);
-            await ClickSignIn();
-            
-        }
-        //public async Task Login(string username, string password, string secretKey)
-        //{
-        //    await EnterEmail(username);
-        //    await EnterPassword(password);
-        //    await ClickSignIn();
-        //}
-        private async Task PassThroughLogin()
-        {
-            BaseTest baseTest = new BaseTest();
-            await baseTest.GoToUrl();
+            await EnterEmailAsync(email);
+            await EnterPasswordAsync(password);
+            await ClickSignInAsync();
+            return LoginResult.Success;
         }
     }
 }

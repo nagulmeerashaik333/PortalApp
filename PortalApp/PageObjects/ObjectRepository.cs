@@ -1,15 +1,18 @@
-﻿
-namespace AutomationPortal.PageObjects
+﻿namespace AutomationPortal.PageObjects
 {
     public static class ObjectRepository
     {
-        public static class LoginPageLocators //Loginpage Elements
+        /*------------------------------------------------------------------
+                               (WebElementsPage)
+         ------------------------------------------------------------------*/
+        public static class LoginPageLocators
         {
-            public static string Username = "//input[@aria-label=\"Username\"]";
-            public static string Password = "//input[@aria-label=\"Password\"]";
-            public static string SignInButton = "//button[text()='Sign In']";
+            public static readonly string Username = "//input[@aria-label=\"Username\"]";
+            public static readonly string Password = "//input[@aria-label=\"Password\"]";
+            public static readonly string SignInButton = "//button[text()='Sign In']";
         }
     }
+
 }
 
 

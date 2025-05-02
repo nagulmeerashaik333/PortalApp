@@ -1,6 +1,7 @@
-﻿using AutomationPortal.GlobalConstants;
+﻿using AutomationPortal.Constants;
 using NUnit.Framework;
 using System.Reflection;
+
 
 namespace AutomationPortal.Utils
 {
@@ -9,34 +10,43 @@ namespace AutomationPortal.Utils
         public static string GetProjectRootDir()
         {
             string executingPath = Assembly.GetExecutingAssembly().Location;
-            return Directory.GetParent(executingPath).Parent.Parent.Parent.FullName;
+            var rootDir = Directory.GetParent(executingPath)?.Parent?.Parent?.FullName;
+
+            if (rootDir == null)
+            {
+                throw new InvalidOperationException("Failed to find project root directory.");
+            }
+
+            return rootDir;
         }
 
         public static string GetVideoRecordingDir()
         {
-            string givenPath = TestContext.Parameters[Property.RecordingVideosDir];
-            if (givenPath == "")
+            string givenPath = GetParameter(Property.RecordingVideosDir);
+            if (string.IsNullOrWhiteSpace(givenPath))
             {
-                return "";
+                return string.Empty;
             }
+
             return Path.Combine(GetProjectRootDir(), givenPath);
         }
 
-        public static string GetParameter(String parameter)
+        public static string GetParameter(string parameter)
         {
-            return TestContext.Parameters[parameter];
+            string value = TestContext.Parameters[parameter];
+            return string.IsNullOrEmpty(value) ? string.Empty : value;
         }
 
         public static string GetBrowser()
         {
-            string? browserName = (string?)TestContext.CurrentContext.Test.Properties.Get("browser");
-            if (browserName == null)
+            string? browserName = TestContext.CurrentContext.Test.Properties.Get("browser") as string;
+
+            if (string.IsNullOrWhiteSpace(browserName))
             {
-                browserName = TestContext.Parameters[Property.BrowserType];
+                browserName = GetParameter(Property.BrowserType);
             }
-            return browserName;
+
+            return string.IsNullOrWhiteSpace(browserName) ? "chrome" : browserName; //default
         }
-
-
     }
 }

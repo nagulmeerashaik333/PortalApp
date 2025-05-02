@@ -1,13 +1,10 @@
-﻿using AutomationPortal.GlobalConstants;
+﻿using AutomationPortal.Constants;
 using AutomationPortal.Utils;
 using Microsoft.Playwright;
 
 
 namespace AutomationPortal.Settings
 {
-    /// <summary>
-    /// Provides browser and context configuration settings for Playwright-based automation.
-    /// </summary>
     public static class TestSettings
     {
         // Cached values to avoid repeated access
@@ -15,9 +12,6 @@ namespace AutomationPortal.Settings
         private static readonly string _browserChannel = GetBrowserChannel();
         private static readonly string _videoRecordingDir = GetVideoRecordingDir();
 
-        /// <summary>
-        /// Returns browser launch options including headless mode, browser channel, and startup args.
-        /// </summary>
         public static BrowserTypeLaunchOptions BrowserTypeLaunchOptions()
         {
             Console.WriteLine($"[Info] Launching browser with Headless = {_headless}, Channel = {_browserChannel}");
@@ -35,9 +29,6 @@ namespace AutomationPortal.Settings
             };
         }
 
-        /// <summary>
-        /// Returns browser context options including viewport size and video recording directory.
-        /// </summary>
         public static BrowserNewContextOptions BrowserNewContextOptions()
         {
             Console.WriteLine($"[Info] Creating new browser context. Video directory: {_videoRecordingDir}");
@@ -49,11 +40,6 @@ namespace AutomationPortal.Settings
             };
         }
 
-
-        /// <summary>
-        /// Parses and returns the HeadlessMode setting from test context.
-        /// Defaults to true if not set or invalid.
-        /// </summary>
         private static bool GetHeadlessMode()
         {
             var value = TestContextUtil.GetParameter(Property.HeadlessMode);
@@ -65,10 +51,6 @@ namespace AutomationPortal.Settings
             return true;
         }
 
-        /// <summary>
-        /// Validates and returns the browser channel (e.g., chrome, msedge, firefox).
-        /// Throws exception if unsupported.
-        /// </summary>
         private static string GetBrowserChannel()
         {
             var browser = TestContextUtil.GetBrowser();
@@ -82,9 +64,6 @@ namespace AutomationPortal.Settings
                 $"Valid options: {string.Join(", ", validBrowsers)}");
         }
 
-        /// <summary>
-        /// Gets the video recording directory. Warns if not provided.
-        /// </summary>
         private static string GetVideoRecordingDir()
         {
             var dir = TestContextUtil.GetVideoRecordingDir();
@@ -96,14 +75,5 @@ namespace AutomationPortal.Settings
 
             return dir;
         }
-
-        //public static string GetEnvironment()
-        //{
-
-        //}
     }
 }
-
-
-//using System.Reflection.Metadata.Ecma335;
-//using System.Runtime;
